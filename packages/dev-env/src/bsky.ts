@@ -32,12 +32,16 @@ export class TestBsky {
       pds: `http://localhost:${port}`,
       signer: serviceKeypair,
     })
+    console.log(`SERVER_DID=${serverDid}`)
 
     // shared across server, ingester, and indexer in order to share pool, avoid too many pg connections.
-    const db = new bsky.Database({
-      url: cfg.dbPostgresUrl,
-      schema: cfg.dbPostgresSchema,
-      poolSize: 10,
+     const server = bsky.BskyAppView.create({
+      db,
+      redis: redisCache,
+      config,
+      algos: cfg.algos,
+      imgInvalidator: cfg.imgInvalidator,
+      signingKey: serviceKeypair,
     })
 
     const dataplanePort = await getPort()

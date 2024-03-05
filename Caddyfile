@@ -1,0 +1,4 @@
+thatsotechy.tech {
+    reverse_proxy atproto-social-app:8100
+}
+

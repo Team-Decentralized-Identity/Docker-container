@@ -1,0 +1,22 @@
+-- plc
+CREATE DATABASE plc;
+GRANT ALL PRIVILEGES ON DATABASE plc TO postgres;
+
+-- bgs
+CREATE DATABASE bgs;
+CREATE DATABASE carstore;
+GRANT ALL PRIVILEGES ON DATABASE bgs TO postgres;
+GRANT ALL PRIVILEGES ON DATABASE carstore TO postgres;
+
+-- bsky(appview)
+CREATE DATABASE bsky;
+GRANT ALL PRIVILEGES ON DATABASE bsky TO postgres;
+
+-- ozone(moderation)
+CREATE DATABASE mod;
+GRANT ALL PRIVILEGES ON DATABASE mod TO postgres;
+
+-- pds
+CREATE DATABASE pds;
+GRANT ALL PRIVILEGES ON DATABASE pds TO postgres;
+
